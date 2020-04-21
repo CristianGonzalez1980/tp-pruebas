@@ -1,3 +1,4 @@
+
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -27,6 +28,7 @@ dependencies {
 	}
 	testImplementation ("junit:junit:4.12")
 	runtimeOnly("mysql:mysql-connector-java")
+
 
 }
 

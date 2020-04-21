@@ -41,7 +41,7 @@ class PatogenoServiceTest {
 
     @Test
     fun seRecuperanTodosLosPatogenosSeCorroboraCantidad() {
-        Assert.assertEquals(4, serviceDao.recuperarATodosLosPatogenos().size)
+        Assert.assertEquals(3, serviceDao.recuperarATodosLosPatogenos().size)
     }
 
     @After

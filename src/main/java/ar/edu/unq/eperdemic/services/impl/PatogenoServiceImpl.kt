@@ -10,7 +10,9 @@ class PatogenoServiceImpl(patogenoDAO: PatogenoDAO) : PatogenoService {
     var dao: PatogenoDAO = patogenoDAO
 
     override fun crearPatogeno(patogeno: Patogeno): Int {
-        return dao.crear(patogeno)
+        val patogenoId: Int = dao.crear(patogeno)
+        patogeno.id = patogenoId
+        return patogenoId
     }
 
     override fun recuperarPatogeno(id: Int): Patogeno {

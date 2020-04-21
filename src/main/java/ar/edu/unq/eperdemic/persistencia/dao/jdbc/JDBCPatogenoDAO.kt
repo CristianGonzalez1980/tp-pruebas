@@ -30,7 +30,7 @@ class JDBCPatogenoDAO : PatogenoDAO {
         return idGenerado
     }
 
-    override fun actualizar(patogeno: Patogeno) {/*
+    override fun actualizar(patogeno: Patogeno) {
         execute { conn: Connection ->
             val ps =
                     conn.prepareStatement("UPDATE patogeno SET cantEspecies = ? WHERE tipo = ?")//o utilizar ID
@@ -42,7 +42,7 @@ class JDBCPatogenoDAO : PatogenoDAO {
             }
             ps.close()
             null
-        }*/
+        }
     }
 
     override fun recuperar(idDelPatogeno: Int): Patogeno {
@@ -76,7 +76,7 @@ class JDBCPatogenoDAO : PatogenoDAO {
                 patogenos.add(patogeno)
             }
             ps.close()
-            patogenos
+            patogenos.sortedWith(compareBy { it.tipo })
         }
     }
 
